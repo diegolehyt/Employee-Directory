@@ -4,27 +4,21 @@ import SortButton from "./components/SortButton";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm";
-import friends from "./friends.json";
+// import friends from "./friends.json";
+import players from "./players.json";
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends,
+    players,
     search: "",
     results: []
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
-
   sortByName = () => {
     function compare (a, b) {
-      const bandA = a.name.toUpperCase();
-      const bandB = b.name.toUpperCase();
+      const bandA = a.fullName.toUpperCase();
+      const bandB = b.fullName.toUpperCase();
     
       let comparison = 0;
       if (bandA > bandB) {
@@ -36,25 +30,13 @@ class App extends Component {
     }
 
     // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.sort(compare)
-    console.log(friends.sort(compare));
+    const players = this.state.players.sort(compare)
+    console.log(players.sort(compare));
     // const friends = this.state.friends.filter(friend => friend.id !== id);
     // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+    this.setState({ players });
   };
 
-  // const handleSearchChange = event => {
-  //   const filter = event.target.value;
-  //   const filteredList = developerState.users.filter(item => {
-  //     let values = item.name.first.toLowerCase() + " " + item.name.last.toLowerCase();
-  //     console.log(filter, values)
-  //   if(values.indexOf(filter.toLowerCase()) !== -1){
-  //     return item
-  //   };
-  //   });
-
-  //   setDeveloperState({ ...developerState, filteredUsers: filteredList });
-  // };
   // --------------------------------------------- input ---------------------------------
   handleInputChange = event => {
     this.setState({ search: event.target.value, results: [] });
@@ -63,7 +45,7 @@ class App extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const results = friends.filter(friend => friend.name === this.state.search)
+    const results = players.filter(friend => friend.fullName === this.state.search)
     this.setState({ results: results });
   };
 
@@ -84,45 +66,43 @@ class App extends Component {
         this.state.results.length > 0
         ? <table>
             <tr>
+              <th>Img</th>
               <th>Name</th>
               <th>Occupation</th>
               <th>Location</th>
             </tr>
             {this.state.results.map(friend => (
-              <tr>
-                <td>{friend.name}</td>
-                <td>{friend.occupation}</td>
-                <td>{friend.location}</td>
-              </tr>  
+              <FriendCard
+                name={friend.fullName}
+                image={friend.imageURL}
+                occupation={friend.position}
+                location={friend.nationality}
+              />
+              // <tr>
+              //   <td>{friend.fullName}</td>
+              //   <td>{friend.position}</td>
+              //   <td>{friend.nationality}</td>
+              // </tr>  
             ))}
 
           </table> 
         : <table>
             <tr>
+              <th>Img</th>
               <th>Name</th>
               <th>Occupation</th>
               <th>Location</th>
             </tr>
-            {this.state.friends.map(friend => (
-              <tr>
-                <td>{friend.name}</td>
-                <td>{friend.occupation}</td>
-                <td>{friend.location}</td>
-              </tr>  
+            {this.state.players.map(friend => (
+              <FriendCard
+                name={friend.fullName}
+                image={friend.imageURL}
+                occupation={friend.position}
+                location={friend.nationality}
+              />
             ))}
           </table>
       }  
-        {this.state.friends.map(friend => (
-          <FriendCard
-            removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            name={friend.name}
-            image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
-          />
-        ))}
       </Wrapper>
     );
   }
