@@ -69,6 +69,7 @@ class App extends Component {
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
+    console.log(this.state.results)
     return (
       <Wrapper>
         <Title>Friends List</Title>
@@ -80,7 +81,7 @@ class App extends Component {
         />
         <SortButton sortByName={this.sortByName}></SortButton>
       {
-        this.state.search 
+        this.state.results.length > 0
         ? <table>
             <tr>
               <th>Name</th>
