@@ -3,7 +3,7 @@ import "./style.css";
 
 function SortButton (props) {
   return (
-    <div className="btn-primary">
+    <div className="btn-primary col-6">
       <span onClick={() => props.sortByName()}>
         SORT BY NAME
       </span>

@@ -4,7 +4,7 @@ import SortButton from "./components/SortButton";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm";
-// import friends from "./friends.json";
+import Navbar from "./components/Navbar";
 import players from "./players.json";
 
 class App extends Component {
@@ -51,20 +51,21 @@ class App extends Component {
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
-    console.log(this.state.results)
+    // console.log(this.state.results)
     return (
       <Wrapper>
+        <Navbar></Navbar>
         <Title>Friends List</Title>
         <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
-            search={this.state.search}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          breeds={this.state.breeds}
+          search={this.state.search}
         />
         <SortButton sortByName={this.sortByName}></SortButton>
       {
         this.state.results.length > 0
-        ? <table>
+        ? <table className='col-12'>
             <tr>
               <th>Img</th>
               <th>Name</th>
@@ -78,15 +79,10 @@ class App extends Component {
                 occupation={friend.position}
                 location={friend.nationality}
               />
-              // <tr>
-              //   <td>{friend.fullName}</td>
-              //   <td>{friend.position}</td>
-              //   <td>{friend.nationality}</td>
-              // </tr>  
             ))}
 
           </table> 
-        : <table>
+        : <table className='col-12'>
             <tr>
               <th>Img</th>
               <th>Name</th>
