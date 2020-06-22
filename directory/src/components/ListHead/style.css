@@ -1,0 +1,16 @@
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+td, th {
+  border: 1px solid #dddddd00;
+  text-align: left;
+  padding: 8px;
+}
+tr {
+  background-color: rgba(26, 26, 131, 0.658);
+}
+tr:nth-child(even) {
+  background-color: rgba(121, 16, 34, 0.616);
+}

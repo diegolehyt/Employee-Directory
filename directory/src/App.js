@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
+import ListHead from "./components/ListHead";
+import List from "./components/List";
 import SortButton from "./components/SortButton";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
@@ -45,7 +47,7 @@ class App extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const results = players.filter(friend => friend.fullName === this.state.search)
+    const results = players.filter(friend => friend.fullName.toUpperCase() === this.state.search.toUpperCase() || friend.lastName.toUpperCase() === this.state.search.toUpperCase() || friend.name.toUpperCase() === this.state.search.toUpperCase() )
     this.setState({ results: results });
   };
 
@@ -65,39 +67,33 @@ class App extends Component {
         <SortButton sortByName={this.sortByName}></SortButton>
       {
         this.state.results.length > 0
-        ? <table className='col-12'>
-            <tr>
-              <th>Img</th>
-              <th>Name</th>
-              <th>Occupation</th>
-              <th>Location</th>
-            </tr>
+        ? <List>
+            <ListHead sortByName={this.sortByName}></ListHead>
             {this.state.results.map(friend => (
               <FriendCard
                 name={friend.fullName}
                 image={friend.imageURL}
-                occupation={friend.position}
-                location={friend.nationality}
+                position={friend.position}
+                country={friend.nationality}
+                age={friend.age}
+                shirtNumber={friend.shirtNumber}
               />
             ))}
 
-          </table> 
-        : <table className='col-12'>
-            <tr>
-              <th>Img</th>
-              <th>Name</th>
-              <th>Occupation</th>
-              <th>Location</th>
-            </tr>
+          </List> 
+        : <List>
+            <ListHead sortByName={this.sortByName}></ListHead>
             {this.state.players.map(friend => (
               <FriendCard
                 name={friend.fullName}
                 image={friend.imageURL}
-                occupation={friend.position}
-                location={friend.nationality}
+                position={friend.position}
+                country={friend.nationality}
+                age={friend.age}
+                shirtNumber={friend.shirtNumber}
               />
             ))}
-          </table>
+          </List>
       }  
       </Wrapper>
     );
