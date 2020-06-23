@@ -17,9 +17,15 @@ const styles = {
     marginLeft: '-11%'
     
   },
-  titleS : {
-    fontFamily: "'Anton', sans-serif",
-    color: 'gold'
+  titleS: {
+    fontFamily: "'Abel', sans-serif",
+    color: 'gold',
+    fontSize: '25px',
+    marginTop: '-15px',
+    display: 'inline'
+  },
+  imagen: {
+    display: 'inline'
   }
 }
 
@@ -28,7 +34,7 @@ const styles = {
 function Navbar () {
   return (
     <nav style={styles.navbarStyle} className='navbar'>
-      <a style={styles.titleS} href='/'>Barcelona Management</a>
+      <a style={styles.titleS} href='/'><img style={styles.imagen} src="http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/32/FC-Barcelona-icon.png" alt="Italian Trulli"/> FC BARCELONA - Management</a>
     </nav>
   )
 }

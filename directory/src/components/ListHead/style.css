@@ -14,3 +14,23 @@ tr {
 tr:nth-child(even) {
   background-color: rgba(121, 16, 34, 0.616);
 }
+
+.zoomOut {
+  transition: transform .5s;
+  font-size: 20px;
+  color: lightgreen;
+}
+
+.zoomOut:hover {
+  transform: scale(1.2);
+}
+
+.zoomIn {
+  transition: transform .5s;
+  font-size: 20px;
+  color: coral;
+}
+
+.zoomIn:hover {
+  transform: scale(0.8); 
+}
