@@ -252,70 +252,72 @@ class App extends Component {
   render() {
     // console.log(this.state.results)
     return (
-      <Wrapper>
+      <div>
         <Navbar></Navbar>
-        <Title>FC Barcelona - Players List</Title>
-        <SearchForm
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          breeds={this.state.breeds}
-          search={this.state.search}
-        />
-        <br/>
-        <br/>
-      {
-        this.state.results.length > 0
-        ? <List>
-            <ListHead 
-              sortByName={this.sortByName}
-              sortByNameD={this.sortByNameD}
-              sortByShirt={this.sortByShirt}
-              sortByShirtD={this.sortByShirtD}
-              sortByAge={this.sortByAge}
-              sortByAgeD={this.sortByAgeD}
-              sortByCountry={this.sortByCountry}
-              sortByCountryD={this.sortByCountryD}
-              sortByPosition={this.sortByPosition}
-              sortByPositionD={this.sortByPositionD}
-            />
-            {this.state.results.map(friend => (
-              <FriendCard
-                name={friend.fullName}
-                image={friend.imageURL}
-                position={friend.position}
-                country={friend.nationality}
-                age={friend.age}
-                shirtNumber={friend.shirtNumber}
+        <Wrapper>
+          <Title>FC Barcelona - Players List</Title>
+          <SearchForm
+            handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            breeds={this.state.breeds}
+            search={this.state.search}
+          />
+          <br/>
+          <br/>
+        {
+          this.state.results.length > 0
+          ? <List>
+              <ListHead 
+                sortByName={this.sortByName}
+                sortByNameD={this.sortByNameD}
+                sortByShirt={this.sortByShirt}
+                sortByShirtD={this.sortByShirtD}
+                sortByAge={this.sortByAge}
+                sortByAgeD={this.sortByAgeD}
+                sortByCountry={this.sortByCountry}
+                sortByCountryD={this.sortByCountryD}
+                sortByPosition={this.sortByPosition}
+                sortByPositionD={this.sortByPositionD}
               />
-            ))}
+              {this.state.results.map(friend => (
+                <FriendCard
+                  name={friend.fullName}
+                  image={friend.imageURL}
+                  position={friend.position}
+                  country={friend.nationality}
+                  age={friend.age}
+                  shirtNumber={friend.shirtNumber}
+                />
+              ))}
 
-          </List> 
-        : <List>
-            <ListHead 
-              sortByName={this.sortByName}
-              sortByNameD={this.sortByNameD}
-              sortByShirt={this.sortByShirt}
-              sortByShirtD={this.sortByShirtD}
-              sortByAge={this.sortByAge}
-              sortByAgeD={this.sortByAgeD}
-              sortByCountry={this.sortByCountry}
-              sortByCountryD={this.sortByCountryD}
-              sortByPosition={this.sortByPosition}
-              sortByPositionD={this.sortByPositionD}
-            />
-            {this.state.players.map(friend => (
-              <FriendCard
-                name={friend.fullName}
-                image={friend.imageURL}
-                position={friend.position}
-                country={friend.nationality}
-                age={friend.age}
-                shirtNumber={friend.shirtNumber}
+            </List> 
+          : <List>
+              <ListHead 
+                sortByName={this.sortByName}
+                sortByNameD={this.sortByNameD}
+                sortByShirt={this.sortByShirt}
+                sortByShirtD={this.sortByShirtD}
+                sortByAge={this.sortByAge}
+                sortByAgeD={this.sortByAgeD}
+                sortByCountry={this.sortByCountry}
+                sortByCountryD={this.sortByCountryD}
+                sortByPosition={this.sortByPosition}
+                sortByPositionD={this.sortByPositionD}
               />
-            ))}
-          </List>
-      }  
-      </Wrapper>
+              {this.state.players.map(friend => (
+                <FriendCard
+                  name={friend.fullName}
+                  image={friend.imageURL}
+                  position={friend.position}
+                  country={friend.nationality}
+                  age={friend.age}
+                  shirtNumber={friend.shirtNumber}
+                />
+              ))}
+            </List>
+        }  
+        </Wrapper>
+      </div>
     );
   }
 }

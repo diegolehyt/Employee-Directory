@@ -31,7 +31,7 @@ function SearchForm(props) {
           list="employees"
           type="text"
           className="form-control col-4"
-          placeholder="Sample (Arturo Vidal or Arturo or Vidal)"
+          placeholder="ex. Arturo Vidal or Arturo or Vidal"
           id="employee"
         />
         <button type="submit" onClick={props.handleFormSubmit} className="btn btn-outline-warning col-2" style={styles.buttonS}>
