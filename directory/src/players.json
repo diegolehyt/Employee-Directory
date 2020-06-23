@@ -1,5 +1,22 @@
 [
   {
+    "_id": "5871c7a3b7488c0018813c3a",
+    "fullName": "Arturo Vidal",
+    "name": "arturo",
+    "lastName": "vidal",
+    "nationality": "Chile",
+    "age": 28,
+    "dateOfBirth": "03/01/1989",
+    "weight": 69,
+    "height": 180,
+    "shirtNumber": 22,
+    "position": "Center",
+    "rating": 75,
+    "description": "Arturo Vidal is Chilean professional footballer who plays as a goalkeeper for FC Barcelona.",
+    "imageURL": "https://www.encancha.cl/wp-content/uploads/2020/05/arturo-vidal-2.jpg",
+    "__v": 0
+  },
+  {
   "_id": "5871c7a3b7488c0011513c2f",
   "fullName": "Samuel Umtiti",
   "name": "samuel",
@@ -372,22 +389,5 @@
   "description": "Jordi Masip López is a Spanish professional footballer who plays as a goalkeeper for FC Barcelona.",
   "imageURL": "https://s.weltsport.net/bilder/spieler/gross/171903.jpg",
   "__v": 0
-  },
-  {
-    "_id": "5871c7a3b7488c0018813c3a",
-    "fullName": "Arturo Vidal",
-    "name": "arturo",
-    "lastName": "vidal",
-    "nationality": "Chile",
-    "age": 28,
-    "dateOfBirth": "03/01/1989",
-    "weight": 69,
-    "height": 180,
-    "shirtNumber": 22,
-    "position": "Center",
-    "rating": 75,
-    "description": "Arturo Vidal is Chilean professional footballer who plays as a goalkeeper for FC Barcelona.",
-    "imageURL": "https://www.encancha.cl/wp-content/uploads/2020/05/arturo-vidal-2.jpg",
-    "__v": 0
-    }
+  }
 ]

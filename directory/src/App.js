@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import ListHead from "./components/ListHead";
 import List from "./components/List";
-import SortButton from "./components/SortButton";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import SearchForm from "./components/SearchForm";
@@ -255,14 +254,15 @@ class App extends Component {
     return (
       <Wrapper>
         <Navbar></Navbar>
-        <Title>Friends List</Title>
+        <Title>FC Barcelona - Players List</Title>
         <SearchForm
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           breeds={this.state.breeds}
           search={this.state.search}
         />
-        <SortButton sortByName={this.sortByName}></SortButton>
+        <br/>
+        <br/>
       {
         this.state.results.length > 0
         ? <List>

@@ -1,6 +1,7 @@
 .avatar {
   width: 100px;
   height: 100px;
+  border-color: gold;
 }
 
 td, th {
@@ -13,4 +14,8 @@ tr {
 }
 tr:nth-child(even) {
   background-color: rgba(121, 16, 34, 0.616);
+}
+
+.img-thumbnail {
+  background-color: gold;
 }

@@ -19,6 +19,7 @@ const styles = {
   },
   titleS: {
     fontFamily: "'Abel', sans-serif",
+    fontWeight: 'bold',
     color: 'gold',
     fontSize: '25px',
     marginTop: '-15px',

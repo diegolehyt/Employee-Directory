@@ -3,8 +3,10 @@ import "./style.css";
 
 const styles = {
   titleS : {
-    fontFamily: "'Anton', sans-serif",
-    color: 'gold'
+    fontFamily: "'Abel', sans-serif",
+    fontWeight: 'bolder',
+    color: 'gold',
+    marginTop: '50px'
   }
 }
 
