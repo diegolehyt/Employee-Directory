@@ -32,7 +32,7 @@ const styles = {
 function Navbar () {
   return (
     <nav style={styles.navbarStyle} className='navbar'>
-      <a style={styles.titleS} href='/'><img style={styles.imagen} src="http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/32/FC-Barcelona-icon.png" alt="Italian Trulli"/> FC BARCELONA - Management</a>
+      <a style={styles.titleS} href='/'><img style={styles.imagen} src="https://iconarchive.com/icons/giannis-zographos/spanish-football-club/32/FC-Barcelona-icon.png" alt="Italian Trulli"/> FC BARCELONA - Management</a>
     </nav>
   )
 }
